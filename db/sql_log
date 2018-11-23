@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------------
+							Start From 23/april/2018
+-------------------------------------------------------------------------------------
+Add device token
+
+ALTER TABLE `users`  ADD `device_token` VARCHAR(255) NOT NULL  AFTER `access_token`;
+ALTER TABLE `doctors`  ADD `device_token` VARCHAR(255) NOT NULL  AFTER `access_token`;
+ALTER TABLE `language`  ADD `sp_name` VARCHAR(30) NOT NULL  AFTER `name`;
+
+ALTER TABLE `doctors` CHANGE `device_token` `device_token` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+ALTER TABLE `users` CHANGE `device_token` `device_token` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;
+
+ALTER TABLE `appointment`  ADD `patient_availability_date_and_time` DATETIME NOT NULL  AFTER `patient_availability_time`;
+
+Make a new table (notification_records)
